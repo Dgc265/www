@@ -1,0 +1,44 @@
+.panel-jugadores{
+
+   width: 400px;
+   height: 400px;
+   display:inline-block;
+ padding: 100px;
+   
+}
+.panel-jugador--willy{
+  display:flex;
+  position: relative;
+  left:120px;
+  bottom:450px;
+  
+}
+.panel-jugador--tony{
+    display:flex;
+    position: relative;
+    left:700px;
+    bottom:550px;
+  }
+  .panel-jugador--kamin{
+    display:flex;
+    position: relative;
+    left:700px;
+    bottom:450px;
+  }
+  .panel-jugador--macura{
+    display:flex;
+    position: relative;
+    left:120px;
+    bottom:550px;
+  }
+
+
+.jugador-charlote--tamanyo{
+
+    width: 150px;
+    height: 100px;
+}
+a:hover{
+  background: #00848e;
+  transition: background-color .5s;
+}

@@ -1,0 +1,40 @@
+.panel-historia--tamanyo{
+    width:100%;
+    height: auto;
+    
+   
+}
+.panel-historia{
+    
+}
+h1{
+    color:#00848e;
+    text-align: center;
+}
+p{
+
+    color:black;
+    font-style: bold;
+}
+.panel-lateral--izquierdo{
+
+    
+    float: left;
+    background-image: url(../imagenes/logo2.png);
+    width:18.3%;
+    height: 1170px;
+}
+.panel-lateral--derecho{
+
+   
+    float: right;
+    background-image: url(../imagenes/logo2.png);
+    width:18.3%;
+    height: 1170px;
+}
+.panel-central{
+
+    display: inline-block;
+    width:60%;
+    padding: 20px;
+}
