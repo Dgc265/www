@@ -7,7 +7,7 @@ $userName=null;
 $avatar=null;
 function compruebalogin(){
     if (isset($_COOKIE["sesion"])){
-        $logged=false;
+        
         $logged=true;
         $userName=$_POST["usuario"];
         $avatar=$_COOKIE["sesion"];

@@ -22,6 +22,7 @@
 
     }else{
         echo "<li><a href='/login'>Login</a></li>";
+        echo "<li><a href='/registro'>Registrarse</a></li>";
   }
 
     

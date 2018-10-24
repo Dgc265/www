@@ -34,6 +34,10 @@
                 "route"=> "/preferencias",
                 "page"=> "preferencias.php"
             ),
+            "registro"=> array(
+                "route"=> "/registro",
+                "page"=> "registro.php"
+            ),
            
         ),
         "error"=> "error.php"
