@@ -1,9 +1,11 @@
 <?php 
-    $conexion = new PDO('mysql:host=localhost;dbname=nba','david','patata');
-    if($conexion!=null){
+    try{
+        
+        $conexion = new PDO('mysql:host=localhost;dbname=nba','david','patata');
+    
 
         echo "estas conectado";
-    }else{
+    }catch(PDOException $e){
         echo "No estas conectado";
     }
 ?>
