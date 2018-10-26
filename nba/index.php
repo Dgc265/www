@@ -1,6 +1,12 @@
 <html>
 <body>
 <?php
+try{
+    $conexion = new PDO('mysql:host=localhost;dbname=nba','david','patata');
+}catch(PDOException $e)
+{
+echo $sql . "<br>" . $e->getMessage();
+}
 $logged=false;
 session_start();
 $userName=null;

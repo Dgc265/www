@@ -38,6 +38,13 @@
                 "route"=> "/registro",
                 "page"=> "registro.php"
             ),
+            "comprobarRegistro"=> array(
+                "route"=> "/comprobarRegistro",
+                "page"=> "comprobarRegistro.php"
+            ),
+
+
+           
            
         ),
         "error"=> "error.php"

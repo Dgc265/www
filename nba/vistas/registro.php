@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="panel-login">
-        <form action="/c" method="POST">
+        <form action="/comprobarRegistro" method="POST">
             <div class="panel-login__body">
             <label for="usuario">Usuario: </label>
             <input class="inputbox" type="text" id="usuario" name="usuario"/>
