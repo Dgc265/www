@@ -42,6 +42,10 @@
                 "route"=> "/comprobarRegistro",
                 "page"=> "comprobarRegistro.php"
             ),
+            "partidos"=> array(
+                "route"=> "/partidos",
+                "page"=> "partidos.php"
+            ),
 
 
            

@@ -10,6 +10,7 @@
     <li><a href="/historia">Historia</a></li>
     
     <li><a href="/jugadores">Jugadores</a></li>
+    <li><a href="/partidos">Partidos</a></li>
     <?php
     if ($_SESSION["logged"]==true){
      $avatar= $_SESSION["avatar"].'"';
