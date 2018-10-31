@@ -2,13 +2,23 @@
 
     $usuario= $_POST["usuario"];
     $contrasenya = $_POST["contrasenya"];
-    $archivo = fopen("./ficheros/fichero.txt","r+");
+    /*$archivo = fopen("./ficheros/fichero.txt","r+");
     $array = file("./ficheros/fichero.txt");
-    $tam= sizeof($array);
+    $tam= sizeof($array);*/
     $contra=md5($contrasenya);
-    
+$sentencia=("SELECT id,nombreUsuario,avatar FROM usuarios WHERE nombreUsuario='".$usuario."'AND password='".$contra."'Limit 1");
 
-    for ($i=0; $i < $tam; $i++) {  
+foreach($conexion->query($sentencia) as $row){
+    setcookie("sesion",$row[2],time()+604800);
+    $_SESSION["nombre"]=$row[1];
+    $_SESSION['id']=$row[0];
+    $_SESSION["contra"]=$contra;
+    header('Location: /');
+    $logueado=true;
+}
+  
+
+   /* for ($i=0; $i < $tam; $i++) {  
         $cortado=explode(";",$array[$i]);
         
         for ($j=0; $j < sizeof($cortado); $j++) {
@@ -27,7 +37,7 @@
         }
        
         
-    }
+    }*/
    if($logueado!=true){
         echo"Lo sentimos fallo en el logueo";
    }
