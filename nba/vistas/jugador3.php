@@ -1,21 +1,23 @@
-
 <?php
 echo '<link rel="stylesheet" type="text/css" href='  . root . dt . css .  'jugador.css>';
-echo"<div class='panel-jugador'>";
-    echo"<h2>Frank Kaminsky</h2>";
-    echo"<h3>Ala-pívot/Pívot | 44 | Charlotte Hornets</h3>";
-        echo '<img class= "jugador-charlote jugador-charlote--tamanyo" src='  . root . dt . imagenes .  'kamin.jpeg>';
-        
-        echo"<p>
-        Altura: 2,13 m </p>
-       <p> Peso: 110 kg</p>
-       <p> Edad: 25 años</p>
-        <p>Nacido el: 04/04/1993 en Lisle (Illinois)</p>
+ $sentencia='SELECT * FROM jugadores WHERE codigo=3 LIMIT 1';
+ 
+ foreach($conexion->query($sentencia) as $row){
+     
+
     
-       <p> Nombre completo: Francis Stanley Kaminsky III</p>
-      <p>  Nacionalidad: Estados Unidos </p>
-        <p>Formado en: Wisconsin</p>
-       <p> Draft: 2015 / 9º</p>";
-        echo"</div>";
+    
+ 
+
+echo"<div class='panel-jugador'>";
+echo"<h2>".$row['Nombre']."</h2>";
+    echo"<h3>".$row['Posicion']." | ".$row['codigo']." | ".$row['Nombre_equipo']."</h3>";
+        echo '<img class= "jugador-charlote jugador-charlote--tamanyo" src='  . root . dt . imagenes .  $row['foto'].'>';
         
-?>
+        echo"<p><br>
+        Altura: ".$row['Altura']." m </p>
+       <p> Peso: ".$row['Peso']." kg</p>
+       <p>  Nacionalidad: ".$row['Procedencia']."</p>";
+        echo"</div>";
+ }
+        ?>

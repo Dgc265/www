@@ -4,24 +4,29 @@ if(isset($_FILES['fichero_usuario'])){
 $dir_subida = "imagenes/";
 $nombreNocortado = $_SESSION["avatar"];
 //$fichero_subido = $dir_subida . basename($nombreAvatar);
-$nombreAvatar =$dir_subida . substr($nombreNocortado, 0, -2);
+
 $extension = end( explode( ".", $_FILES['fichero_usuario']['name'] ) );
+$nombreAvatar =$dir_subida . "avatar".$_SESSION['id'].".".$extension;
 
 if($extension == $_COOKIE["sesion"]){
+    unlink(imagenes. "avatar".$_SESSION['id'].".gif");
+    unlink(imagenes. "avatar".$_SESSION['id'].".jpg");
+    unlink(imagenes. "avatar".$_SESSION['id'].".jpeg");
 move_uploaded_file($_FILES['fichero_usuario']['tmp_name'], $nombreAvatar);
 setCookie("sesion",null,-1);
 setcookie("sesion",$extension,time()+604800);
 }else{
- $sentencia=("UPDATE usuarios SET avatar=:extension WHERE id=:id");
- $prepare = 
- $resultado=$conexion->exec($sentencia);
+ $sentencia= $conexion->prepare("UPDATE usuarios SET avatar=:extension WHERE id=:id");
+ $sentencia->bindParam(':extension',$extension,PDO::PARAM_STR);
+ $sentencia->bindParam(':id',$_SESSION['id'],PDO::PARAM_STR);
+  $resultado=$sentencia->execute();
 
  if($resultado==1){
     
-    unlink("avatar".$_SESSION['id'].".gif");
-    unlink("avatar".$_SESSION['id'].".jpg");
-    unlink("avatar".$_SESSION['id'].".jpeg");
-    unlink("avatar".$_SESSION['id'].".png");
+    unlink(imagenes. "avatar".$_SESSION['id'].".gif");
+    unlink(imagenes. "avatar".$_SESSION['id'].".jpg");
+    unlink(imagenes. "avatar".$_SESSION['id'].".jpeg");
+    unlink(imagenes. "avatar".$_SESSION['id'].".png");
     setCookie("sesion",null,-1);
     setcookie("sesion",$extension,time()+604800);
 }
