@@ -33,5 +33,13 @@
            
         </form>
     </div>    
+    <?php
+      if($_SESSION["noregistro"]==true){
+        echo  '<script>
+        window.alert("No se pudo registrar nombre de usuario ya en uso le redirigimos al registro")
+        </script>';
+        unset($_SESSION["noregistro"]);
+      }
+    ?>
 </body>
 </html>

@@ -7,14 +7,28 @@ $nombreNocortado = $_SESSION["avatar"];
 $nombreAvatar =$dir_subida . substr($nombreNocortado, 0, -2);
 $extension = end( explode( ".", $_FILES['fichero_usuario']['name'] ) );
 
-if($extension == "jpg"){
+if($extension == $_COOKIE["sesion"]){
 move_uploaded_file($_FILES['fichero_usuario']['tmp_name'], $nombreAvatar);
 setCookie("sesion",null,-1);
-setcookie("sesion",$nombreNocortado,time()+604800);
-header('Location: /');
+setcookie("sesion",$extension,time()+604800);
 }else{
-    echo"no se puede";
+ $sentencia=("UPDATE usuarios SET avatar=:extension WHERE id=:id");
+ $prepare = 
+ $resultado=$conexion->exec($sentencia);
+
+ if($resultado==1){
+    
+    unlink("avatar".$_SESSION['id'].".gif");
+    unlink("avatar".$_SESSION['id'].".jpg");
+    unlink("avatar".$_SESSION['id'].".jpeg");
+    unlink("avatar".$_SESSION['id'].".png");
+    setCookie("sesion",null,-1);
+    setcookie("sesion",$extension,time()+604800);
 }
+
+    
+}
+
 }
 
       

@@ -8,9 +8,7 @@ $sentencia=("INSERT INTO usuarios (nombreUsuario,password,avatar) VALUES('".$usu
  $resultado=$conexion->exec($sentencia);
 
  if($resultado==1){
-  echo  '<script>
-window.alert("Ya esta registrado Los charlotte hornets le damos al Bienvenida")
-</script>';
+ 
 $sentenciaid=("SELECT MAX(id) as'id' FROM usuarios");
 foreach($conexion->query($sentenciaid) as $row);{
 $idusuario=$row['id'];
@@ -48,13 +46,12 @@ $idusuario=$row['id'];
     
   break;
   }
-    //header("Location: /");
+  $_SESSION["registro"]=true;
+    header("Location: /login");
      
  }else{
-    echo  '<script>
-    window.alert("No se pudo registrar nombre de usario ya en uso le redirigimos al registro")
-    </script>';
-  // header("Location: /registro");
+    $_SESSION["noregistro"]=true;
+    header("Location: /registro");
      
  };
 

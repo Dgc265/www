@@ -16,9 +16,15 @@ function compruebalogin(){
         
         $logged=true;
         $userName=$_POST["usuario"];
+        if($_COOKIE["sesion"]=="false"){
+            $avatar="avatar.jpeg";
+        
+    }else{
+    
+        
         $avatar="avatar".$_SESSION['id'].".".$_COOKIE["sesion"];
-        $_SESSION["avatar"]=$avatar;
-      
+    }
+    $_SESSION["avatar"]=$avatar;
       $_SESSION["logged"]=$logged;
     }
     

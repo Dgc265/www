@@ -14,11 +14,11 @@
     <?php
     
     if ($_SESSION["logged"]==true){
-         $avatar= $_SESSION["avatar"].'"';
+         $avatar= $_SESSION["avatar"];
     
      
      
-          echo "<li><a><img class='panel-menu--tamanyo-imagen' src="  . root . dt . imagenes . trim($avatar)."</img></a></li>";
+          echo "<li><a><img class='panel-menu--tamanyo-imagen' src="  . root . dt . imagenes . trim($avatar)."></img></a></li>";
           echo "<li><a href='/preferencias'>Preferencias</a></li>";
           echo "<li><a href='/desconectar'>Deconectar</a></li>";
 

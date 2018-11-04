@@ -26,6 +26,14 @@
             <input type='submit' value='Login'/>
             </div>
         </form>
-    </div>    
+    </div> 
+    <?php
+      if($_SESSION["registro"]==true){
+        echo  '<script>
+        window.alert("Ya esta registrado Los charlotte hornets le damos al Bienvenida y le animamos a loguearse")
+        </script>';
+        unset($_SESSION["registro"]);
+      }
+    ?>   
 </body>
 </html>

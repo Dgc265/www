@@ -9,8 +9,12 @@
 $sentencia=("SELECT id,nombreUsuario,avatar FROM usuarios WHERE nombreUsuario='".$usuario."'AND password='".$contra."'Limit 1");
 
 foreach($conexion->query($sentencia) as $row){
+    if($row[2]==null){
+        setcookie("sesion","false",time()+604800);
+    }else{
     setcookie("sesion",$row[2],time()+604800);
-    $_SESSION["nombre"]=$row[1];
+}
+    $_SESSION["usuario"]=$row[1];
     $_SESSION['id']=$row[0];
     $_SESSION["contra"]=$contra;
     header('Location: /');
@@ -40,6 +44,7 @@ foreach($conexion->query($sentencia) as $row){
     }*/
    if($logueado!=true){
         echo"Lo sentimos fallo en el logueo";
+        $logueado=false;
    }
 
 
