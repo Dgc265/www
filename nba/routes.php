@@ -47,8 +47,14 @@
                 "page"=> "partidos.php"
             ),
 
-
-           
+            "noticias"=> array(
+                "route"=> "/noticias",
+                "page"=> "noticias.php"
+            ),
+            "noticia"=> array(
+                "route"=> "/noticias/:idnoticia",
+                "page"=> "noticia.php"
+            ),
            
         ),
         "error"=> "error.php"

@@ -8,7 +8,7 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/historia">Historia</a></li>
-    
+    <li><a href="/noticias">Noticias</a></li>
     <li><a href="/jugadores">Jugadores</a></li>
     <li><a href="/partidos">Partidos</a></li>
     <?php
