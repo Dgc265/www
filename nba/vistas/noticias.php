@@ -11,9 +11,9 @@
 <body>
  <?php
  include_once "menu.php";
-    $sentencia= "SELECT titulo FROM noticias";
+    $sentencia= "SELECT * FROM noticias";
     foreach($conexion->query($sentencia) as $row){
-        echo '<a href='  . root . dt .   'noticias/1>';
+        echo '<a href='  . root . dt .   'noticias/'.$row['id'].'>';
         echo "<h2>".$row['titulo']."</h2>";
         echo"</a>";
         
