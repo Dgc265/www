@@ -16,11 +16,11 @@
         <form action="/comprobarLogin" method="POST">
             <div class="panel-login__body">
             <label for="usuario">Usuario: </label>
-            <input class="inputbox" type="text" id="usuario" name="usuario"/>
+            <input class="inputbox" type="text" id="usuario" name="usuario" required/>
             </div>
             <div class="panel-login__body">
             <label for="contrasenya">Contraseña: </label>
-            <input type="password" id="contrasenya" name="contrasenya"/>
+            <input type="password" id="contrasenya" name="contrasenya" required/>
             </div>
             <div class="panel-login__body panel-login__body--centro">
             <input type='submit' value='Login'/>

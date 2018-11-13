@@ -4,8 +4,14 @@
  $extension = end( explode( ".", $_FILES['avatar']['name']));
  echo $extension;
   
-$sentencia=("INSERT INTO usuarios (nombreUsuario,password,avatar) VALUES('".$usuario."','".$contra."','".$extension."')");
- $resultado=$conexion->exec($sentencia);
+$sql=("INSERT INTO usuarios (nombreUsuario,password,avatar) VALUES(:usuario,:contra,:extension)");
+$sentencia= $conexion->prepare($sql);
+$sentencia->bindParam(':usuario',$usuario,PDO::PARAM_STR);
+$sentencia->bindParam(':contra',$contra,PDO::PARAM_STR);
+$sentencia->bindParam(':extension',$extension,PDO::PARAM_STR);
+$resultado = $sentencia->execute();
+
+ 
 
  if($resultado==1){
  
