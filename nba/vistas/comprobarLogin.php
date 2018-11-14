@@ -6,16 +6,22 @@
     $array = file("./ficheros/fichero.txt");
     $tam= sizeof($array);*/
     $contra=md5($contrasenya);
-$sentencia=("SELECT id,nombreUsuario,avatar FROM usuarios WHERE nombreUsuario='".$usuario."'AND password='".$contra."'Limit 1");
+$sql=("SELECT id,nombreUsuario,avatar FROM usuarios WHERE nombreUsuario=:usuario AND password=:contra Limit 1");
+$sentencia= $conexion->prepare($sql);
+$sentencia->bindParam(':usuario',$usuario,PDO::PARAM_STR);
+$sentencia->bindParam(':contra',$contra,PDO::PARAM_STR);
+$sentencia->execute();
+$resultado = $sentencia->fetchAll();
 
-foreach($conexion->query($sentencia) as $row){
-    if($row[2]==null){
+
+foreach($resultado as $row){
+    if($row['avatar']==null){
         setcookie("sesion","false",time()+604800);
     }else{
     setcookie("sesion",$row[2],time()+604800);
 }
-    $_SESSION["usuario"]=$row[1];
-    $_SESSION['id']=$row[0];
+    $_SESSION["usuario"]=$row['nombreUsuario'];
+    $_SESSION['id']=$row['id'];
     $_SESSION["contra"]=$contra;
     header('Location: /');
     $logueado=true;
