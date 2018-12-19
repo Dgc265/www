@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WeekenDays</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/www/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+<body class = "layout-landing-page">
+  <div class = "landing-page">
+    <section class="landing-page__header landing-page__header--position">
+        <div class="landing-page__background">
+            <video src="/www/multimedia/iniFinal.mp4" autoplay muted loop></video>
+        </div>
+        <div class="landing-page__overlay"></div>
+        <div class="landing-page__text">
+            <div class="title-section title-section--content-hidden">
+                <div class="title-position">
+                    <ul class="title-list-text">
+                        <li>W</li>
+                        <li>e</li>
+                        <li>e</li>
+                        <li>k</li>
+                        <li>e</li>
+                        <li>n</li>
+                        <li>D</li>
+                        <li>a</li>
+                        <li>y</li>
+                        <li>s</li>
+                    </ul>
+                    <br/>
+                    <a href="file:///E:/DAW2/INTERFAZ/TEMPLATE/PRUEBA/index.html"><button class="myBtn">EXPLORAR</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+    <script type="text/javascript">
+    $(function(){
+        var welcome=$('.title-section'),
+        enterButton= welcome.find('enter-button');
+        setTimeout(function(){
+            welcome.removeClass('content-hidden');
+        },800);
+        enterButton.on('click',function(e){
+            e.preventDefault();
+            welcome.addClass('content-hidden').fadeOut();
+        });
+    });
+    </script>
+</body>
+</html>

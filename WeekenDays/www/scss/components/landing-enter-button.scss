@@ -1,0 +1,60 @@
+.landing-explore-button {
+    display: block;
+    margin-top: 30px;
+    margin-left:50%;
+    padding: 24px 48px;
+    left: 50%;
+    top: 50%;
+    font-family: "Arial";
+    letter-spacing: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    background: none;
+    opacity: 0.7;
+    border: 2px solid #fff;
+  
+    transition: 0.8s ease-out;
+}
+
+
+ a{
+    text-decoration: none;
+}
+ a:visited{
+   
+    color: white;
+}
+
+.landing-explore-button:hover {
+    color: #101010;
+   
+}
+
+.landing-explore-button:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top 0.8s ease-out;
+}
+
+.landing-explore-button:hover:before {
+    top: 0;
+}
+
+@media screen and (max-width : 800px) {
+    .landing-explore-button{
+        font-size: 100%;
+        padding: 15px 30px;
+      }
+
+}
